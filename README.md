@@ -1,60 +1,98 @@
-# Laravel Admin Products & Cart API
+# CMT_Task_Admin_Products_Cart_API
 
-A Laravel 10/11 application that provides an **Admin Product Management Panel (Web)** and **Customer Cart & Checkout APIs** secured using **Laravel Sanctum**.
+A Laravel 10/11 application that provides a **Product Management Admin Panel (Web)** and **Customer Cart & Checkout APIs** secured using **Laravel Sanctum**.
 
-This project is built as part of a technical assignment and follows Laravel best practices including validation via Form Requests, clean authorization separation, and feature testing.
-
----
-
-## Tech Stack
-
-- Laravel 10 / 11
-- PHP 8+
-- MySQL / PostgreSQL
-- Laravel Sanctum (API Authentication)
+This project demonstrates best practices such as **Form Request validation**, **authorization separation**, and clean backend architecture.
 
 ---
 
-## Features
+## 🚀 Features
 
-### Admin Panel (Web)
-- Admin authentication (session-based)
-- Admin-only route protection using guards & middleware
+### 🧑‍💼 Admin Panel (Web)
+
+- Session-based admin authentication
 - Product CRUD (Create, Read, Update, Delete)
-- Product search by **name / SKU** (database-driven)
-- Toggle product active / inactive status
-- Server-side validation using **Form Requests**
-- Validation errors and success messages shown in UI
+- Search products by **name** or **SKU**
+- Toggle product **active / inactive**
+- Server-side validation using Form Requests
+- Display validation errors and success messages
 
-### Customer APIs (Sanctum)
+### 📱 Customer APIs (Sanctum Authentication)
+
 - Register
 - Login
 - Logout
-
-### Cart Module
-- Add products to cart (duplicate products merge quantity)
+- Add products to cart (merges duplicate products)
 - Update cart item quantity
-- Remove cart items
-- View cart items with total price
+- Remove items from cart
+- View cart with total price
 - Checkout with stock validation
 
 ---
 
-## Database Structure
+## 🗂 Tech Stack
 
-### Tables
-- `products`
-- `users`
-- `admins`
-- `carts` (user_id is unique)
-- `cart_items`
-
-Proper foreign keys, unique constraints, and data integrity rules are applied.
+| Technology | Version |
+|------------|---------|
+| Laravel | 10 / 11 |
+| PHP | 8+ |
+| Database | MySQL / PostgreSQL |
+| Authentication | Laravel Sanctum |
 
 ---
 
-### Clone the Repository
+## 🧱 Database Structure
+
+**Main Tables:**
+
+- `products`
+- `users`
+- `admins`
+- `carts` *(one cart per user)*
+- `cart_items`
+
+The database schema includes proper **foreign keys**, **indexes**, and **data integrity constraints**.
+
+---
+
+## 📥 Getting Started
+
+### 🔁 Clone the Repository
+
+
+git clone https://github.com/IshaDesari/CMT_Task_Admin_Products_Cart_API.git
+cd CMT_Task_Admin_Products_Cart_API
+
+
+### ⚙️ Install Dependencies
+
+composer install
+npm install
+
+### 📄 Environment Setup
+cp .env.example .env
+php artisan key:generate
+
+### 🗄️ Run Migrations & Seeders
+php artisan migrate
+php artisan db:seed
+
+### 🚀 Run the Application
+php artisan serve
+
+Admin Panel: http://127.0.0.1:8000
+API Base URL: http://127.0.0.1:8000/api
+
+### 🔐 Default Admin Credentials
+
+Admin Login:
+
+Email: admin@example.com
+Password: password
+
+### 🧪 Testing
+
+Run tests using:
+php artisan test
 
 ```bash
-git clone https://github.com/<your-username>/laravel-admin-products-cart-api.git
-cd laravel-admin-products-cart-api
